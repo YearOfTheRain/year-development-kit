@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: mysql-kit
+server:
+  port: 18100

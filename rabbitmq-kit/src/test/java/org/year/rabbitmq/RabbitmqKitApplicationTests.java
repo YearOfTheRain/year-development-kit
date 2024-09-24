@@ -1,0 +1,13 @@
+package org.year.rabbitmq;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class RabbitmqKitApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

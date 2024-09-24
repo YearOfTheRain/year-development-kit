@@ -64,6 +64,8 @@
 
     <modules>
         <module>mysql-kit</module>
+        <module>new-17-modules</module>
+        <module>rabbitmq-kit</module>
     </modules>
 
     <!-- 依赖声明 -->

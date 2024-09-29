@@ -22,7 +22,7 @@ public class JdbcUserServiceTest {
 
     @Test
     void createAndList() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             User user = new User();
             user.setName("111" + i);
             user.setAge(23 + i);

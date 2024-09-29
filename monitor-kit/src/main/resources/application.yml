@@ -1,0 +1,7 @@
+server:
+  port: 16866
+
+spring:
+  application:
+    name: monitor-kit
+

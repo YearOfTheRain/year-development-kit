@@ -16,9 +16,9 @@ import javax.sql.DataSource;
 public class JdbcConfig {
 
 
-//    @Bean("dataSource")
-//    @ConfigurationProperties(prefix = "spring.datasource")
-//    public DataSource dataSource() {
-//        return new DriverManagerDataSource();
-//    }
+    @Bean("dataSource")
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource dataSource() {
+        return new DriverManagerDataSource();
+    }
 }

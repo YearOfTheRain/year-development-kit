@@ -1,3 +1,5 @@
 spring:
   application:
     name: rabbitmq-kit
+server:
+  port: 18888

@@ -2,6 +2,8 @@ package org.year.message.util;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.year.message.store.MessageInfo;
+import org.year.message.store.MessageInfoService;
 
 /**
  * 消息监听通用工具类
@@ -14,6 +16,7 @@ public class MessageListenerUtil {
     }
 
     private static final RedisTemplate redisTemplate = SpringUtils.getBean(RedisTemplate.class);
+    private static final MessageInfoService messageInfoService = SpringUtils.getBean(MessageInfoService.class);
 
     /**
      * 发送监听消息
@@ -22,6 +25,10 @@ public class MessageListenerUtil {
      */
     public static void send(String channel, String messageContextStr) {
         redisTemplate.convertAndSend(channel, messageContextStr);
+
+        // todo 记录消息发送情况
+        MessageInfo messageInfo = MessageInfo.create(channel, messageContextStr);
+        messageInfoService.save(messageInfo);
     }
 
     /**

@@ -1,8 +1,10 @@
-package org.year.rabbitmq.demo_one;
+package org.year.rabbitmq.queue_demo;
 
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.MessageProperties;
+
 /**
  * @author YearOfTheRain
  * @create 2024-09-24  08:43
@@ -21,8 +23,8 @@ public class Send {
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
                 channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-                String message = "Hello World12312312313123123232!";
-                channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+                String message = "8888888!";
+                channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
                 System.out.println(" [x] Sent '" + message + "'");
         }
     }

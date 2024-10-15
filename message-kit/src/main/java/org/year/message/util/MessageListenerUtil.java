@@ -24,11 +24,11 @@ public class MessageListenerUtil {
      * @param messageContextStr 消息内容（字符串）
      */
     public static void send(String channel, String messageContextStr) {
-        redisTemplate.convertAndSend(channel, messageContextStr);
-
-        // todo 记录消息发送情况
+        // 记录消息发送情况，先持久化，失败还可以重试
         MessageInfo messageInfo = MessageInfo.create(channel, messageContextStr);
         messageInfoService.save(messageInfo);
+
+        redisTemplate.convertAndSend(channel, messageContextStr);
     }
 
     /**

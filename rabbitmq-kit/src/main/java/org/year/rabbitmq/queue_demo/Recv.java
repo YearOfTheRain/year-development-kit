@@ -1,4 +1,4 @@
-package org.year.rabbitmq.demo_one;
+package org.year.rabbitmq.queue_demo;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -23,15 +23,18 @@ public class Recv {
         factory.setPassword("admin123456");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-
+        channel.basicQos(1);
+//        channel.exchangeDeclare("", "direct",true, false,false,null);
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+//        channel.queueBind(QUEUE_NAME, "", "");
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received '" + message + "'");
+            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });
 
     }
 }

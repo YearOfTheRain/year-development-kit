@@ -68,6 +68,7 @@
         <module>new-17-modules</module>
         <module>rabbitmq-kit</module>
         <module>message-kit</module>
+        <module>spring-kit</module>
     </modules>
 
     <!-- 依赖声明 -->

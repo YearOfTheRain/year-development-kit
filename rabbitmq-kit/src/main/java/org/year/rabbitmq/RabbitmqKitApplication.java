@@ -13,10 +13,10 @@ public class RabbitmqKitApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(RabbitmqKitApplication.class);
-        application.addListeners(event -> {
-            System.out.println("=====> anonymityListener: "+ event);
-        });
-        application.addListeners(new MessageDemo.MyApplication());
+//        application.addListeners(event -> {
+//            System.out.println("=====> anonymityListener: "+ event);
+//        });
+//        application.addListeners(new MessageDemo.MyApplication());
         application.run(args);
 //        SpringApplication.run(RabbitmqKitApplication.class, args);
     }

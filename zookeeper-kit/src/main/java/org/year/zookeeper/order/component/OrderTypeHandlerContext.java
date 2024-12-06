@@ -3,10 +3,11 @@ package org.year.zookeeper.order.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import org.year.zookeeper.SysConfig;
 import org.year.zookeeper.order.annotation.OrderTypeHandler;
 import org.year.zookeeper.order.entity.OrderEntity;
 import org.year.zookeeper.order.handler.AbstractOrderTypeHandler;
@@ -25,6 +26,13 @@ public class OrderTypeHandlerContext implements ApplicationContextAware {
 
     private static final String DEFAULT_HANDLER = "default";
 
+
+    @Autowired
+    private Map<String, Map<String, Object>> infos;
+
+    @Autowired
+    private SysConfig sysConfig;
+
     /**
      * key为orderType，value为class
      */
@@ -42,6 +50,8 @@ public class OrderTypeHandlerContext implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         log.info("初始化订单处理器");
+        log.info("单处理器{}", infos);
+        log.info("单处理器{}", sysConfig);
         // 遍历带有OrderTypeHandler注释的类
         Map<String, Object> beans = applicationContext.getBeansWithAnnotation(OrderTypeHandler.class);
         if (!beans.isEmpty()) {

@@ -8,8 +8,22 @@ package org.year.modules.demo_one;
 public class TestDemo8 {
 
     public static void main(String[] args) {
-        Shape shape = new Shape.Circle("circle", 5);
-        System.out.println(shape.area());
+//        Shape shape = new Shape.Circle("circle", 5);
+//        System.out.println(shape.area());
+        String user = "user";
+        String dd = switch (user){
+            case "admin"->{
+                System.out.println("管理员");
+                yield "管理员";
+            }
+            case "user"->{
+                System.out.println("用户");
+                yield "用户";
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + user);
+        };
+        System.out.println(dd);
+
     }
 
 

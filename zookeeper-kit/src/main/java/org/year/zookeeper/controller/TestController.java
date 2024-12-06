@@ -36,6 +36,15 @@ public class TestController {
     public String use() {
         return "use";
     }
+    @GetMapping("/useException/{id}")
+    public String useException(@PathVariable("id") Integer id) {
+        try {
+            int i = 20/id;
+        } catch (ArithmeticException e){
+            return "除数不能为0";
+        }
+        return "没有异常";
+    }
 
     @PostMapping("/save")
     public String save(@RequestBody SaveRequest request) {

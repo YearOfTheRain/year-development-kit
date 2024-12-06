@@ -1,1 +1,21 @@
-spring.application.name=zookeeper-kit
+spring:
+  application:
+    name: zookeeper-kit
+
+sys:
+  type: uuid
+  infos:
+    user:
+      id: 1
+      age: 23
+      name: 张三
+    order:
+      oId: 1
+      oType: 1
+      oStatus: 1
+      oAmount: 100
+  coreSize: 10
+  corePoolSize: 10
+  maxPoolSize: 20
+  keepalive: 1000
+

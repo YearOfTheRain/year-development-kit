@@ -69,6 +69,7 @@
         <module>rabbitmq-kit</module>
         <module>message-kit</module>
         <module>spring-kit</module>
+        <module>test-kit</module>
     </modules>
 
     <!-- 依赖声明 -->

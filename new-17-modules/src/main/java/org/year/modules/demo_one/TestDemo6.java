@@ -8,14 +8,15 @@ package org.year.modules.demo_one;
 public class TestDemo6 {
 
     public static void main(String[] args) {
-        OrderRequest orderRequest = new OrderRequest("", 5);
+        OrderRequest orderRequest = new OrderRequest("123  ", 5);
+        System.out.println(orderRequest);
 
         OrderHodeRequest orderHodeRequest = new OrderHodeRequest("", "5", orderRequest);
 
-        Circle circle = new Circle(-5);
-        Circle circle1 = new Circle(5);
-        System.out.println(circle);
-        System.out.println(circle.equals(circle1));
+//        Circle circle = new Circle(-5);
+//        Circle circle1 = new Circle(5);
+//        System.out.println(circle);
+//        System.out.println(circle.equals(circle1));
     }
 
     interface Shape{

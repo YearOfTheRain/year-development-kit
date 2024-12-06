@@ -1,5 +1,7 @@
 package org.year.modules.demo_one;
 
+import java.util.Date;
+
 /**
  * 字符块
  * @author YearOfTheRain
@@ -13,12 +15,12 @@ public class TestDemo7 {
                 <!DOCTYPE html>
                 <html>
                     <body>
-                        <h1>"Hello %s \
+                        <h1>"Hello %s %d %f %c  %b \
                         \s
                          World!"</h1>
                     </body>
                 </html>
-                """.formatted("year");
+                """.formatted("year", 1, 2.3, 'a',true, true, new Date(), 111);
         System.out.println(String.format(textBlock, "闪大大大大大"));
 
         String ddd = """

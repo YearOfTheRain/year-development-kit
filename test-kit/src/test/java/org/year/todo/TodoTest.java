@@ -11,6 +11,7 @@ import org.year.test.todo.core.parameter.TodoParameter;
 import org.year.test.todo.core.repository.TodoRepository;
 import org.year.test.todo.core.service.TodoService;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -24,7 +25,7 @@ public class TodoTest {
 
     @BeforeEach
     void setUp() {
-        TodoRepository repository = new FileStoreRepository();
+        TodoRepository repository = new DbRepository();
 //        Mockito.when(repository.save(Mockito.any(TodoItem.class))).then(i -> i.getArgument(0));
         service = new TodoService(repository);
     }
@@ -50,6 +51,28 @@ public class TodoTest {
 
         // 断言
         Assertions.assertThrows(IllegalArgumentException.class, executable);
+    }
+
+
+    class DbRepository implements TodoRepository {
+
+        @Override
+        public TodoItem save(TodoItem item) {
+            return null;
+        }
+
+        @Override
+        public Collection<TodoItem> findAll() {
+            return List.of();
+        }
+    }
+
+
+    @Test
+    void test111() {
+        // 第一步：构建获取处理类
+
+        // 第二步：组建接口类
     }
 
 

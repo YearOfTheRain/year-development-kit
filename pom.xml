@@ -70,6 +70,8 @@
         <module>message-kit</module>
         <module>spring-kit</module>
         <module>test-kit</module>
+        <module>spring-errot-kit</module>
+        <module>design-kit</module>
     </modules>
 
     <!-- 依赖声明 -->

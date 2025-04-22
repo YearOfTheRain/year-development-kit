@@ -72,6 +72,7 @@
         <module>test-kit</module>
         <module>spring-errot-kit</module>
         <module>design-kit</module>
+        <module>common-kit</module>
     </modules>
 
     <!-- 依赖声明 -->

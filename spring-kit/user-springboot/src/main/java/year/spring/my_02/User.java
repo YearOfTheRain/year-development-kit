@@ -1,13 +1,15 @@
-package cn.year.spring.my_02;
+package year.spring.my_02;
 
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 /**
  * @author YearOfTheRain
  * @create 2024-11-05  10:56
  */
+
 public class User implements InitializingBean, DisposableBean, BeanNameAware {
     private String name;
 

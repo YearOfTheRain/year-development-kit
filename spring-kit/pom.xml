@@ -5,20 +5,22 @@
     <packaging>pom</packaging>
     <name>Archetype - spring-kit</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>myspringboot</module>
-        <module>user-springboot</module>
-    </modules>
+
     <groupId>org.year</groupId>
     <version>1.0-SNAPSHOT</version>
 
     <description>纯粹的spring环境，非springboot</description>
 
+
+    <modules>
+        <module>myspringboot</module>
+        <module>user-springboot</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.27</version>
+            <version>6.1.12</version>
         </dependency>
     </dependencies>
 </project>
